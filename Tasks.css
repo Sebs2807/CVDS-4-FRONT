@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+  color: #1a3c7d;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  color: #4DA6FF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.members {
+  background-color: #05183c;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.members h2, .members li {
+  color: #4DA6FF;
+}
+
+.task-manager {
+  background-color: #05183c;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task-manager h2 {
+  color: #4DA6FF;
+}
+
+.new-task {
+  background-color: #1a3c7d;
+  color: #4DA6FF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
