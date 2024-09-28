@@ -15,13 +15,11 @@ body {
   padding: 20px 0;
 }
 
-.members, .task-manager {
+.members {
   background-color: #05183c;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
-  border: 4px solid #4DA6FF;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 
 .members h2, .members li {
@@ -38,26 +36,68 @@ body {
   color: #4DA6FF;
 }
 
-.new-task {
+.new-task, .cambiar-estado, .eliminar-tarea {
   background-color: #1a3c7d;
   color: #4DA6FF;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  
 }
 
-.grow {
-  background-color: #4DA6FF;
-  color: #010b1a;
-  transition: .5s, color .10s;
-  -webkit-transition: .5s, color .10s;
-  -moz-transition: .5s, color .10s;
+button:active {
+  color: #fff;
 }
 
-.grow:hover {
-  transform: scale3d(1.5, 1.5, 0.3);
-  -webkit-transform: scale3d(1.5, 1.5, 0.3);
-  -moz-transform: scale3d(1.5, 1.5, 0.3);
-  background-color: #1470cb; 
+
+.estado-finalizada-t {
+  color: #4DA6FF;
+  text-decoration: line-through; 
+}
+
+.estado-pendiente-t {
+  color: #4DA6FF; 
+}
+
+.subtitulo-tarea{
+  color: #fff;
+}
+
+.estado-finalizada {
+  color: green;  
+}
+
+.estado-pendiente {
+  color: #ffdd34;  
+}
+
+.adicionar-tarea{
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+
+  input  { 
+    background-color: #05183c;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #4DA6FF;
+  }
+
+  input:focus{
+    color: #fff;
+  }
+
+  ::placeholder {
+    color: #fff
+  }
+
+  .i1{
+    width: 30%;
+    margin-right: 3%;
+  }
+  .i2{
+    width: 65%;
+  }
 }
