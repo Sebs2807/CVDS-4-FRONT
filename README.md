@@ -41,6 +41,21 @@ Por lo que debe estar en este puerto y se utiliza en las funciones como parametr
 
 ## 4. Creacion de logica de CRUD
 
-![CRUDTASKS](image-4.png)
+![CRUDTASKS](images/image-4.png)
 
 Con estos 3 metodos mas el que creamos deberiamos tener toda la informacion necesaria del back
+
+## 5. Renderizado de tareas en base al back
+
+Se tuvo que hacer un metodo muy complejo con varios elementos pero con ello se tiene la logica que llama a los elementos que ya creamos
+
+![render](images/image-5.png)
+
+Y luego de implementar esta logica utilizamos los render
+
+document.addEventListener('DOMContentLoaded', fetchTasks);
+document.addEventListener('DOMContentLoaded', createBtnListener);
+
+Con ello hay elementos en el DOM que escuchan cada vez que cambia el back y con ello se actualiza correctamente
+
+Adicionalmente se cambiaron algunas cosas de estilos y lo necesario en el front para llamarlo con los elementos de listas.
