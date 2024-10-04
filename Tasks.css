@@ -100,4 +100,20 @@ button:active {
   .i2{
     width: 65%;
   }
+
+  #task-priority{
+    width: 15%;
+    margin-right: 3%;
+  }
+
+  #task-difficulty{
+    width: 20%;
+    margin-right: 3%;
+  }
+
+  #task-duration{
+    width: 25%;
+  }
+
+  
 }
