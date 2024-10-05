@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analítica de Tareas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="analytics.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analítica de Tareas</h1>
+        
+        <section>
+            <h2>Histograma de Dificultad</h2>
+            <canvas id="difficultyChart"></canvas>
+        </section>
+        
+        <section>
+            <h2>Número de Tareas Finalizadas por Tiempo</h2>
+            <canvas id="tasksByTimeChart"></canvas>
+        </section>
+        
+        <section>
+            <h2>Promedio de Tareas por Prioridad</h2>
+            <canvas id="priorityAvgChart"></canvas>
+        </section>
+
+        <section>
+            <h2>Tiempo Total Invertido en Tareas</h2>
+            <canvas id="totalTimeChart"></canvas>
+        </section>
+    </div>
+
+    <script src="analytics.js" defer></script>
+</body>
+</html>

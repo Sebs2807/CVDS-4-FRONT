@@ -8,6 +8,9 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+.container1{
+  color:white;
+}
 
 .title {
   color: #4DA6FF;
@@ -115,5 +118,27 @@ button:active {
     width: 25%;
   }
 
+  #adicionar-tarea select {
+    background-color: #05183c;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #4DA6FF;
+    padding: 5px;
+  }
+  #adicionar-tarea option {
+    background-color: #05183c;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #4DA6FF;
+    padding: 5px;
+  }
   
+  #adicionar-tarea select:focus {
+    color: #fff;
+  }
+  
+  #adicionar-tarea select option {
+    background-color: #05183c;
+    color: #fff;
+  }
 }
