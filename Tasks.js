@@ -1,7 +1,11 @@
-const apiUrl = 'http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks'; 
+// const apiUrl = 'http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks'; 
+const apiUrl = 'http://localhost:8080/tasks'
 
 async function fetchTasks() {
-    const response = await fetch(apiUrl);
+    const idUser = "671033ace7442b72dd8487eb"
+    const response = await fetch(`${apiUrl}/GAT/${idUser}`, {
+        method: 'GET', 
+    });
     const tasks = await response.json();
     renderTaskList(tasks);
 }
@@ -73,7 +77,8 @@ function renderTaskList(tasks) {
             descTarea: task.descTarea,
             prioridadTarea: task.prioridadTarea,
             dificultadTarea: task.dificultadTarea,
-            tiempoTarea: task.tiempoTarea
+            tiempoTarea: task.tiempoTarea,
+            idUser: task.idUser
         };
 
         UpdateTask(task.idTarea, jsonAns);
@@ -115,7 +120,7 @@ async function createBtnListener() {
                 descTarea: desc,
                 prioridadTarea: priority,
                 dificultadTarea: difficulty,
-                tiempoTarea: `PT${duration.replace(':', 'H')}M`
+                tiempoTarea: duration
             };
             try {
                 await CreateTask(jsonAns);

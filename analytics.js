@@ -1,4 +1,5 @@
-const apiUrl = 'http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks'; 
+// const apiUrl = 'http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks'; 
+const apiUrl = 'http://localhost:8080/tasks';
 
 async function fetchTasks() {
     const response = await fetch(apiUrl);
