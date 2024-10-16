@@ -15,15 +15,30 @@
                 <li>Juan Sebastian Velasquez Rodriguez</li>
                 <li>Santiag o Alberto Naranjo Abril</li>
             </ul>
+            <div >
+                <a class="container1" href="analytics.html">Ver Analítica de Tareas</a>
+            </div>
+            
         </section>
         <section class="task-manager">
             <h2 >Administrador de Tareas</h2>
             <div class="adicionar-tarea">
                 <input class="i1" type="text" id="task-name" name="task-name" placeholder="Nombre de la tarea">
-                <input class="i2" type="text" id="task-desc" name="task-desc" rows="4" cols="50" placeholder="Ingrese la descripción de la tarea"></input>
+                <input class="i2" type="text" id="task-desc" name="task-desc" placeholder="Ingrese la descripcion de la tarea">
             </div>
+
+            <div class="adicionar-tarea">
+                <input type="number" id="task-priority" placeholder="Prioridad" min="1" max="5">
+                <select id="task-difficulty">
+                    <option value="BAJO">Bajo</option>
+                    <option value="MEDIO">Medio</option>
+                    <option value="ALTO">Alto</option>
+                </select>
+                <input type="text" id="task-duration" placeholder="Tiempo estimado">
+            </div>
+
             <button id="add-btn" class="new-task">Agregar nueva tarea</button>
-            <ul id="task-list"></ul> <!-- Contenedor para la lista de tareas -->
+            <ul id="task-list"></ul> 
         </section>
     </div>
 </body>

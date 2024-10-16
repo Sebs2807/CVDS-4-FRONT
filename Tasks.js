@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/tasks'; 
+const apiUrl = 'http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks'; 
 
 async function fetchTasks() {
     const response = await fetch(apiUrl);
@@ -38,80 +38,98 @@ function renderTaskList(tasks) {
     tasks.forEach(task => {
         const li = document.createElement('li');
         li.classList.add('task-item');
-        
+
         const estadoClase = task.finalizada ? 'estado-finalizada' : 'estado-pendiente';
         const estadoTitulo = task.finalizada ? 'estado-finalizada-t' : 'estado-pendiente-t';
-    
+
         li.innerHTML = `
             <h3 class="${estadoTitulo}">${task.nombreTarea}</h3>
             <p class="subtitulo-tarea"><strong>Descripción:</strong> ${task.descTarea}</p>
+            <p class="subtitulo-tarea"><strong>Prioridad:</strong> ${task.prioridadTarea}</p>
+            <p class="subtitulo-tarea"><strong>Dificultad:</strong> ${task.dificultadTarea}</p>
+            <p class="subtitulo-tarea"><strong>Tiempo estimado:</strong> ${task.tiempoTarea}</p>
             <p class="${estadoClase}"><strong>Estado:</strong> ${task.finalizada ? 'Finalizada' : 'Pendiente'}</p>
             <button class="cambiar-estado">Cambiar Estado</button>
             <button class="eliminar-tarea">Eliminar</button>
         `;
-    
+
         taskList.appendChild(li);
-    
+
         const cambiarEstadoBtn = li.querySelector('.cambiar-estado');
         cambiarEstadoBtn.addEventListener('click', () => {
-            cambiarEstado(task); 
+            cambiarEstado(task);
         });
-    
+
         const eliminarBtn = li.querySelector('.eliminar-tarea');
         eliminarBtn.addEventListener('click', () => {
-            eliminarTarea(task);  
+            eliminarTarea(task);
         });
     });
-    
+
     function cambiarEstado(task) {
         const jsonAns = {
             nombreTarea: task.nombreTarea,
             finalizada: !task.finalizada,
-            descTarea: task.descTarea
-        }
+            descTarea: task.descTarea,
+            prioridadTarea: task.prioridadTarea,
+            dificultadTarea: task.dificultadTarea,
+            tiempoTarea: task.tiempoTarea
+        };
 
         UpdateTask(task.idTarea, jsonAns);
-
-        task.finalizada = !task.finalizada; 
+        task.finalizada = !task.finalizada;
         renderTaskList(tasks);
     }
-    
+
     function eliminarTarea(task) {
         const index = tasks.indexOf(task);
         if (index > -1) {
             tasks.splice(index, 1);
-            DeleteTask(task.idTarea) 
+            DeleteTask(task.idTarea);
         }
-        renderTaskList(tasks); 
+        renderTaskList(tasks);
     }
 }
 
 
-async function createBtnListener(){
+
+async function createBtnListener() {
     const addBtn = document.getElementById('add-btn');
     addBtn.addEventListener('click', async () => {
         const nameInput = document.getElementById('task-name');
         const descInput = document.getElementById('task-desc');
+        const priorityInput = document.getElementById('task-priority');
+        const difficultyInput = document.getElementById('task-difficulty');
+        const durationInput = document.getElementById('task-duration');
 
         const name = nameInput.value.trim(); 
-        const desc = descInput.value.trim(); 
+        const desc = descInput.value.trim();
+        const priority = parseInt(priorityInput.value);
+        const difficulty = difficultyInput.value;
+        const duration = durationInput.value;
 
-        if (name !== "" && desc !== "") { 
+        if (name !== "" && desc !== "" && priority > 0 && duration) {
             const jsonAns = {
                 nombreTarea: name,
                 finalizada: false,
-                descTarea: desc
+                descTarea: desc,
+                prioridadTarea: priority,
+                dificultadTarea: difficulty,
+                tiempoTarea: `PT${duration.replace(':', 'H')}M`
             };
             try {
-                await CreateTask(jsonAns); 
-                await fetchTasks(); 
-                nameInput.value = ''; 
-                descInput.value = ''; 
+                await CreateTask(jsonAns);
+                await fetchTasks();
+                nameInput.value = '';
+                descInput.value = '';
+                priorityInput.value = '';
+                difficultyInput.value = 'BAJO';
+                durationInput.value = '';
             } catch (error) {
                 console.error('Error al crear la tarea:', error);
             }
         } else {
-            alert("Por favor, complete todos los campos.");
+            alert("Por favor, complete todos los campos correctamente.");
         }
     });
 }

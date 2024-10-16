@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+  background-color: black;
+  color: #1a3c7d;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #4DA6FF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h2 {
+  color: #4DA6FF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos de las secciones de gráficos */
+section {
+  background-color: #05183c;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+section h2 {
+  color: #4DA6FF;
+  margin-bottom: 20px;
+}
+
+/* Estilos del canvas de Chart.js */
+canvas {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para botones (si los tuvieras relacionados con los gráficos) */
+button {
+  background-color: #1a3c7d;
+  color: #4DA6FF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:active {
+  color: #fff;
+}
+
+/* Adaptación para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  canvas {
+    padding: 8px;
+  }
+}

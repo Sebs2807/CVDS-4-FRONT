@@ -8,6 +8,9 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+.container1{
+  color:white;
+}
 
 .title {
   color: #4DA6FF;
@@ -100,4 +103,100 @@ button:active {
   .i2{
     width: 65%;
   }
+
+  #task-priority{
+    width: 15%;
+    margin-right: 3%;
+  }
+
+  #task-difficulty{
+    width: 20%;
+    margin-right: 3%;
+  }
+
+  #task-duration{
+    width: 25%;
+  }
+
+  #adicionar-tarea select {
+    background-color: #05183c;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #4DA6FF;
+    padding: 5px;
+  }
+  #adicionar-tarea option {
+    background-color: #05183c;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #4DA6FF;
+    padding: 5px;
+  }
+  
+  #adicionar-tarea select:focus {
+    color: #fff;
+  }
+  
+  #adicionar-tarea select option {
+    background-color: #05183c;
+    color: #fff;
+  }
+
+  
+}
+
+button:active {
+  color: #fff;
+}
+
+
+.estado-finalizada-t {
+  color: #4DA6FF;
+  text-decoration: line-through; 
+}
+
+.estado-pendiente-t {
+  color: #4DA6FF; 
+}
+
+.subtitulo-tarea{
+  color: #fff;
+}
+
+.estado-finalizada {
+  color: green;  
+}
+
+.estado-pendiente {
+  color: #ffdd34;  
+}
+
+.adicionar-tarea {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.adicionar-tarea input {
+  background-color: #05183c;
+  color: #fff;
+  border-radius: 3px;
+  border-color: #4DA6FF;
+}
+
+.adicionar-tarea input:focus {
+  color: #fff;
+}
+
+.adicionar-tarea input::placeholder {
+  color: #fff;
+}
+
+.adicionar-tarea .i1 {
+  width: 30%;
+  margin-right: 3%;
+}
+
+.adicionar-tarea .i2 {
+  width: 65%;
 }
