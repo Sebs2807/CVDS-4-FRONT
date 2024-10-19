@@ -48,7 +48,6 @@ function TaskManager() {
 			<h2>Administrador de Tareas</h2>
 			<CreateTask createTask={createTask} />
 			<TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
-			<Analytics tasks={tasks} />
 		</section>
 	);
 }
