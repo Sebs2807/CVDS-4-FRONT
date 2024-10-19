@@ -15,7 +15,12 @@ function Tasks() {
 					<li>Santiago Alberto Naranjo Abril</li>
 				</ul>
 				<div>
-					<a className="container1" href="analytics.html">
+					<a
+						className="container1"
+						href="/analytics"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Ver Analítica de Tareas
 					</a>
 				</div>

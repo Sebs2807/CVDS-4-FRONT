@@ -1,7 +1,9 @@
 import React from "react";
 import TaskItem from "./TaskItem.js";
+import Analytics from "./analytics";
 
 function TaskList({ tasks, updateTask, deleteTask }) {
+	<Analytics tasks={tasks} />
 	return (
 		<ul id="task-list">
 			{tasks.map((task) => (

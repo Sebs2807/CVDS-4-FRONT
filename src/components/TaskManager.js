@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CreateTask from "./CreateTask";
 import TaskList from "./TaskList";
+import Analytics from "./analytics";
 
-const apiUrl = "http://localhost:8080/tasks";
+const apiUrl = "http://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks";
 
 function TaskManager() {
 	const [tasks, setTasks] = useState([]);
@@ -47,6 +48,7 @@ function TaskManager() {
 			<h2>Administrador de Tareas</h2>
 			<CreateTask createTask={createTask} />
 			<TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+			<Analytics tasks={tasks} />
 		</section>
 	);
 }
