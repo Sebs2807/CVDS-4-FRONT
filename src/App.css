@@ -1,266 +1,269 @@
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .container1 {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .title {
-  color: var(--accent-color);
-  text-align: center;
-  padding: 20px 0;
+	color: var(--accent-color);
+	text-align: center;
+	padding: 20px 0;
 }
 
 .members {
-  background-color: var(--background-secondary);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
+	background-color: var(--background-secondary);
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 15px;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logout-button {
-  background-color: var(--accent-color);
-  color: var(--button-text-color);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+	background-color: var(--accent-color);
+	color: var(--button-text-color);
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
 }
 
 .logout-button:hover {
-  background-color: var(--accent-color-hover);
+	background-color: var(--accent-color-hover);
 }
 
-.members h2, .members li {
-  color: var(--accent-color);
+.members h2,
+.members li {
+	color: var(--accent-color);
 }
 
 .task-manager {
-  background-color: var(--background-secondary);
-  padding: 20px;
-  border-radius: 5px;
+	background-color: var(--background-secondary);
+	padding: 20px;
+	border-radius: 5px;
 }
 
 .task-manager h2 {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
-.new-task, .cambiar-estado, .eliminar-tarea {
-  background-color: var(--accent-color);
-  color: var(--button-text-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.new-task,
+.cambiar-estado,
+.eliminar-tarea {
+	background-color: var(--accent-color);
+	color: var(--button-text-color);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 button:active {
-  color: #fff;
+	color: #fff;
 }
 
 .estado-finalizada-t {
-  color: var(--accent-color);
-  text-decoration: line-through;
+	color: var(--accent-color);
+	text-decoration: line-through;
 }
 
 .estado-pendiente-t {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .subtitulo-tarea {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .estado-finalizada {
-  color: green;
+	color: green;
 }
 
 .estado-pendiente {
-  color: #ffdd34;
+	color: #ffdd34;
 }
 
 .adicionar-tarea {
-  display: flex;
-  width: 100%;
-  margin-bottom: 10px;
+	display: flex;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 .adicionar-tarea input {
-  background-color: var(--background-secondary);
-  color: var(--text-color);
-  border-radius: 3px;
-  border-color: var(--accent-color);
+	background-color: var(--background-secondary);
+	color: var(--text-color);
+	border-radius: 3px;
+	border-color: var(--accent-color);
 }
 
 .adicionar-tarea input:focus {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .adicionar-tarea ::placeholder {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .adicionar-tarea .i1 {
-  width: 30%;
-  margin-right: 3%;
+	width: 30%;
+	margin-right: 3%;
 }
 
 .adicionar-tarea .i2 {
-  width: 65%;
+	width: 65%;
 }
 
 #adicionar-tarea select {
-  background-color: var(--background-secondary);
-  color: var(--text-color);
-  border-radius: 3px;
-  border-color: var(--accent-color);
-  padding: 5px;
+	background-color: var(--background-secondary);
+	color: var(--text-color);
+	border-radius: 3px;
+	border-color: var(--accent-color);
+	padding: 5px;
 }
 
 #adicionar-tarea option {
-  background-color: var(--background-secondary);
-  color: var(--text-color);
-  border-radius: 3px;
-  border-color: var(--accent-color);
-  padding: 5px;
+	background-color: var(--background-secondary);
+	color: var(--text-color);
+	border-radius: 3px;
+	border-color: var(--accent-color);
+	padding: 5px;
 }
 
 #adicionar-tarea select:focus {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 #adicionar-tarea select option {
-  background-color: var(--background-secondary);
-  color: var(--text-color);
+	background-color: var(--background-secondary);
+	color: var(--text-color);
 }
 
 /* Login and Sign-up styles */
 .auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 .auth-form {
-  background-color: var(--background-secondary);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+	background-color: var(--background-secondary);
+	padding: 40px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
 }
 
 .auth-form h1 {
-  color: var(--accent-color);
-  margin-bottom: 20px;
+	color: var(--accent-color);
+	margin-bottom: 20px;
 }
 
 .auth-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--input-background);
-  color: var(--text-color);
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--input-background);
+	color: var(--text-color);
 }
 
 .auth-form input::placeholder {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 .auth-form button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--accent-color);
-  color: var(--button-text-color);
-  cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--accent-color);
+	color: var(--button-text-color);
+	cursor: pointer;
 }
 
 .auth-form button:hover {
-  background-color: var(--accent-color-hover);
+	background-color: var(--accent-color-hover);
 }
 
 .auth-form p {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .auth-form a {
-  color: var(--accent-color);
-  text-decoration: none;
+	color: var(--accent-color);
+	text-decoration: none;
 }
 
 .auth-form a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Theme toggle button */
 .footer {
-  text-align: center;
-  padding: 20px;
+	text-align: center;
+	padding: 20px;
 }
 
 .theme-toggle {
-  background-color: var(--accent-color);
-  color: var(--button-text-color);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+	background-color: var(--accent-color);
+	color: var(--button-text-color);
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
 }
 
 .theme-toggle:hover {
-  background-color: var(--accent-color-hover);
+	background-color: var(--accent-color-hover);
 }
 
 /* Dark mode variables */
 :root {
-  --background-primary: #121212;
-  --background-secondary: #1f1f1f;
-  --text-color: #e0e0e0;
-  --accent-color: #4DA6FF;
-  --accent-color-hover: #1a3c7d;
-  --button-text-color: #121212;
-  --input-background: #2c2c2c;
+	--background-primary: #121212;
+	--background-secondary: #1f1f1f;
+	--text-color: #e0e0e0;
+	--accent-color: #4da6ff;
+	--accent-color-hover: #1a3c7d;
+	--button-text-color: #121212;
+	--input-background: #2c2c2c;
 }
 
 /* Light mode variables */
 .light-mode {
-  --background-primary: #ffffff;
-  --background-secondary: #f0f0f0;
-  --text-color: #121212;
-  --accent-color: #4DA6FF;
-  --accent-color-hover: #1a3c7d;
-  --button-text-color: #ffffff;
-  --input-background: #e0e0e0;
+	--background-primary: #ffffff;
+	--background-secondary: #f0f0f0;
+	--text-color: #121212;
+	--accent-color: #4da6ff;
+	--accent-color-hover: #1a3c7d;
+	--button-text-color: #ffffff;
+	--input-background: #e0e0e0;
 }
 
 body.dark-mode {
-  background-color: var(--background-primary);
-  color: var(--text-color);
+	background-color: var(--background-primary);
+	color: var(--text-color);
 }
 
 body.light-mode {
-  background-color: var(--background-primary);
-  color: var(--text-color);
+	background-color: var(--background-primary);
+	color: var(--text-color);
 }
