@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import TaskManager from "./TaskManager";
-import "./Task.css";
+import "../styles/Task.css";
 
 function Tasks({ userData }) {
 	const navigate = useNavigate();

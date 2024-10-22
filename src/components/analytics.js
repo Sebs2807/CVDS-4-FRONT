@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar, Line, Doughnut } from "react-chartjs-2";
 import { useLocation } from "react-router-dom"; // Importa useLocation
-import "./Analytics.css";
+import "../styles/Analytics.css";
 import {
 	Chart as ChartJS,
 	CategoryScale,
