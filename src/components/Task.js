@@ -5,6 +5,7 @@ import "./Task.css";
 
 function Tasks({ userData }) {
 	const navigate = useNavigate();
+	const [tasks, setTasks] = React.useState([]); // Mover estado de tareas aquí para pasarlo a Analytics
 
 	const handleLogout = async () => {
 		try {
@@ -26,6 +27,10 @@ function Tasks({ userData }) {
 		}
 	};
 
+	const openAnalytics = () => {
+		navigate("/analytics", { state: { tasks } });
+	};
+
 	return (
 		<div className="container">
 			<div className="header">
@@ -43,12 +48,12 @@ function Tasks({ userData }) {
 					<li>Santiago Alberto Naranjo Abril</li>
 				</ul>
 				<div>
-					<a className="container1" href="analytics.html">
+					<button className="container1" onClick={openAnalytics}>
 						Ver Analítica de Tareas
-					</a>
+					</button>
 				</div>
 			</section>
-			<TaskManager token={userData} />
+			<TaskManager token={userData} setTasks={setTasks} /> {/* Pasa setTasks aquí */}
 		</div>
 	);
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Tasks from "./components/Task";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import Analytics from "./components/Analytics";
 import "./App.css"; // Import the CSS file
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/login" element={<Login setToken={setToken} setUserData={setUserData} />}/>
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/tasks" element={ <Tasks token={token} setToken={setToken} userData={userData} />}/>
+					<Route path="/analytics" element={<Analytics />} />
 				</Routes>
 			</Router>
 			<footer className="footer">

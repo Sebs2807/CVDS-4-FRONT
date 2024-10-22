@@ -1,6 +1,7 @@
 import React from "react";
 import { Bar, Line, Doughnut } from "react-chartjs-2";
-import "./analytics.css";
+import { useLocation } from "react-router-dom"; // Importa useLocation
+import "./Analytics.css";
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -26,7 +27,14 @@ ChartJS.register(
 	Legend
 );
 
-const analytics = ({ tasks }) => {
+const Analytics = () => {
+	const location = useLocation();
+	const tasks = location.state?.tasks || [];
+
+	if (!tasks || tasks.length === 0) {
+		return <p>No hay tareas para mostrar en la analítica.</p>;
+	}
+
 	const getTaskCountsByDifficulty = () => {
 		return [
 			tasks.filter((task) => task.dificultadTarea === "BAJO").length,
@@ -37,9 +45,7 @@ const analytics = ({ tasks }) => {
 
 	const getTimeData = () => {
 		return tasks.reduce((acum, task) => {
-			const time = task.tiempoTarea
-				? parseInt(task.tiempoTarea.split("H")[0])
-				: 0;
+			const time = task.tiempoTarea ? task.tiempoTarea : 0;
 			if (task.finalizada) acum.push(time);
 			return acum;
 		}, []);
@@ -56,9 +62,7 @@ const analytics = ({ tasks }) => {
 		return tasks
 			.filter((task) => task.finalizada)
 			.reduce((sum, task) => {
-				const time = task.tiempoTarea
-					? parseInt(task.tiempoTarea.split("H")[0])
-					: 0;
+				const time = task.tiempoTarea ? task.tiempoTarea : 0;
 				return sum + time;
 			}, 0);
 	};
@@ -144,4 +148,4 @@ const analytics = ({ tasks }) => {
 	);
 };
 
-export default analytics;
+export default Analytics;

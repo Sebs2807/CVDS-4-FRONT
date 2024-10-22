@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import CreateTask from "./CreateTask";
 import TaskList from "./TaskList";
-import Analytics from "./Analytics";
 
 const apiUrl = "http://localhost:8080/tasks";
 
-function TaskManager({ token }) {
-	const [tasks, setTasks] = useState([]);
+function TaskManager({ token, setTasks }) {
+	const [tasks, localSetTasks] = useState([]);
+
+	const fetchTasks = useCallback(async () => {
+		const response = await fetch(`${apiUrl}/GAT/${token.idUser}`);
+		const data = await response.json();
+		localSetTasks(data);
+		setTasks(data); // Pasar las tareas al componente padre
+	}, [token, setTasks]);
 
 	useEffect(() => {
 		console.log("Token", token);
 		if (token) {
 			fetchTasks();
 		}
-	}, [token]);
+	}, [token, fetchTasks]);
 
-	const fetchTasks = async () => {
-		const response = await fetch(`${apiUrl}/GAT/${token.idUser}`);
-		const data = await response.json();
-		setTasks(data);
-	};
 
 	const createTask = async (newTask) => {
 		newTask.idUser = token.idUser;
@@ -52,7 +53,6 @@ function TaskManager({ token }) {
 			<h2>Administrador de Tareas</h2>
 			<CreateTask createTask={createTask} /> {/* Pass createTask here */}
 			<TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
-			<Analytics tasks={tasks} />
 		</section>
 	);
 }
