@@ -4,7 +4,7 @@ import Tasks from "./components/Task";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Analytics from "./components/Analytics";
-import "./App.css"; // Import the CSS file
+import "./styles/App.css"; // Import the CSS file
 
 function App() {
 	const [token, setToken] = useState(null); // Token from login
