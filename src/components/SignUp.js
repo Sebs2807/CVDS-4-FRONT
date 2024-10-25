@@ -32,7 +32,6 @@ function SignUp() {
       if (data) {
         navigate("/login");
       } else {
-        alert("Hubo un problema al crear tu cuenta. Por favor, inténtalo de nuevo.");
       }
     } catch (error) {
       console.error("Error during sign up:", error);
