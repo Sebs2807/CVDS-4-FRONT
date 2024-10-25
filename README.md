@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# CVDS LAB 4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## CRUD DE TAREAS FRONTEND
 
-## Available Scripts
+### Integrantes
 
-In the project directory, you can run:
+- Santiago Díaz Rojas
+- David Felipe Velásquez
+- Sebastián Velásquez
+- Santiago Naranjo
 
-### `npm start`
+## 1. Creacion scaffolding.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Vamos a iniciar creando los archivos html, css y javascript que vamos a utilizar para el front del proyecto:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![alt text](images/image.png)
 
-### `npm test`
+Ahora vamos a hacer una entry page para nuestro proyecto, con tal que luego se añada la seccion del CRUD
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 2. Creacion de pagina inicial
 
-### `npm run build`
+En primer lugar vamos a realizar un mockup de como necesitamos que luzca nuestra aplicacion:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+He aqui el mockup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://app.moqups.com/4S0JsPhCbW21CO9aDELel8PrS9E8MyfH/view/page/ad64222d5
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![alt text](images/image-2.png)
 
-### `npm run eject`
+Luego de hacer la estructura inicial y aplicar algunos estilos, se ve de esta forma:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![alt text](images/image-1.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3. Creacion de la logica de conexion con el server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ya que la url es const apiUrl = 'http://localhost:8080/tasks';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Por lo que debe estar en este puerto y se utiliza en las funciones como parametro, por ejemplo para hacer el fetch:
 
-## Learn More
+![alt text](images/image-3.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 4. Creacion de logica de CRUD
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![CRUDTASKS](images/image-4.png)
 
-### Code Splitting
+Con estos 3 metodos mas el que creamos deberiamos tener toda la informacion necesaria del back
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 5. Renderizado de tareas en base al back
 
-### Analyzing the Bundle Size
+Se tuvo que hacer un metodo muy complejo con varios elementos pero con ello se tiene la logica que llama a los elementos que ya creamos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![render](images/image-5.png)
 
-### Making a Progressive Web App
+Y luego de implementar esta logica utilizamos los render
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+document.addEventListener('DOMContentLoaded', fetchTasks);
+document.addEventListener('DOMContentLoaded', createBtnListener);
 
-### Advanced Configuration
+Con ello hay elementos en el DOM que escuchan cada vez que cambia el back y con ello se actualiza correctamente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Adicionalmente se cambiaron algunas cosas de estilos y lo necesario en el front para llamarlo con los elementos de listas.
