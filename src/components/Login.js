@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = "http://localhost:8080/auth"; // Adjust this if necessary
+const apiUrl = "https://localhost:8443/auth"; // Adjust this if necessary
 
-function Login({ setToken, setUserData }) {
+function Login({ setToken, setUserData, setRoles }) {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
@@ -18,6 +18,7 @@ function Login({ setToken, setUserData }) {
 			const data = await response.json();
 			console.log("Data", data);
 			if (data && data.idUser) {
+				setRoles(data.roles)
 				setToken(data);
 				setUserData(data); // Set the user data
 				navigate("/tasks"); // Redirect to task manager

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = "http://localhost:8080/auth";
+const apiUrl = "https://localhost:8443/auth";
 
 function SignUp() {
   const [username, setUsername] = useState("");

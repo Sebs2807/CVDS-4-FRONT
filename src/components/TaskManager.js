@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import CreateTask from "./CreateTask";
 import TaskList from "./TaskList";
 
-const apiUrl = "http://localhost:8080/tasks";
+const apiUrl = "https://localhost:8443/tasks";
 
 function TaskManager({ token, setTasks }) {
 	const [tasks, localSetTasks] = useState([]);
@@ -48,6 +48,7 @@ function TaskManager({ token, setTasks }) {
 		fetchTasks();
 	};
 
+	console.log(tasks,"tareas")
 	return (
 		<section className="task-manager">
 			<h2>Administrador de Tareas</h2>

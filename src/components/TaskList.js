@@ -2,6 +2,7 @@ import React from "react";
 import TaskItem from "./TaskItem.js";
 
 function TaskList({ tasks, updateTask, deleteTask }) {
+	console.log(tasks, "Tareas");
 	return (
 		<ul id="task-list">
 			{tasks.map((task) => (
