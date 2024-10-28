@@ -59,3 +59,11 @@ document.addEventListener('DOMContentLoaded', createBtnListener);
 Con ello hay elementos en el DOM que escuchan cada vez que cambia el back y con ello se actualiza correctamente
 
 Adicionalmente se cambiaron algunas cosas de estilos y lo necesario en el front para llamarlo con los elementos de listas.
+
+## 6. Implementación mediante roles
+![alt text](images/image-6.png)
+
+Se creo un componente ProtectedRoute el cual se encarga de revisar las 2 listas, una con los roles que pueden ingresar a esta ruta y otra con los roles del usuario que está navegando (en realidad está guardado en el token), si cumple con los roles, lo redirecciona mediante <Outlet>, herramienta que se encarga de por asi decirlo anidar las direcciones, a la ruta que quería ir antes de la revisión y si no cumple con los roles, lo redirecciona al componente NotAuthorized que le mostrará que no está autorizado para ver esto.
+
+Con el fin de proteger las rutas de tasks y analytics, se incorporó ProtectedRoute de la siguiente forma para ambas rutas.
+![alt text](images/image-7.png)
