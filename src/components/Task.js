@@ -12,7 +12,7 @@ function Tasks() {
 	
 	const handleLogout = async () => {
 		try {
-			const response = await fetch("http://localhost:8080/auth", {
+			const response = await fetch("https://localhost:8443/auth", {
 				method: "DELETE",
 				headers: {
 					"Content-Type": "application/json",

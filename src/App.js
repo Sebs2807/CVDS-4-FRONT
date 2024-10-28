@@ -21,7 +21,7 @@ function App() {
 	useEffect(() => {
 		const fetchRoles = async () => {
 			try {
-				const response = await fetch(`http://localhost:8080/auth/roles/${userData?.userName}`, {
+				const response = await fetch(`https://localhost:8443/auth/roles/${userData?.userName}`, {
 					headers: {
 						'Authorization': `Bearer ${token}`,
 						'Content-Type': 'application/json'
