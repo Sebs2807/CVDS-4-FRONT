@@ -1,12 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import TaskManager from "./TaskManager";
 import "../styles/Task.css";
 
-function Tasks({ userData }) {
-	const navigate = useNavigate();
-	const [tasks, setTasks] = React.useState([]); // Mover estado de tareas aquí para pasarlo a Analytics
-
+function Tasks() {
+    const navigate = useNavigate();
+    const [tasks, setTasks] = React.useState([]);
+	const context = useOutletContext();
+	const { userData, token, setToken } = context || {};
+	console.log("Context data:", context);  // Para verificar el contenido completo
+	
 	const handleLogout = async () => {
 		try {
 			const response = await fetch("http://localhost:8080/auth", {

@@ -48,6 +48,7 @@ function TaskManager({ token, setTasks }) {
 		fetchTasks();
 	};
 
+	console.log(tasks,"tareas")
 	return (
 		<section className="task-manager">
 			<h2>Administrador de Tareas</h2>
