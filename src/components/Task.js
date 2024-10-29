@@ -8,7 +8,7 @@ function Tasks() {
     const [setTasks] = React.useState([]);
 
     const context = useOutletContext();
-    const { userData, roles } = context || {}; // Removed unused variables token and setToken
+    const { userData } = context || {}; // Removed unused variables token and setToken
     console.log("Context data:", context); // Para verificar el contenido completo
 
 
