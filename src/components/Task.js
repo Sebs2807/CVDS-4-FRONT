@@ -7,7 +7,7 @@ function Tasks() {
     const navigate = useNavigate();
     const [tasks, setTasks] = React.useState([]);
     const context = useOutletContext();
-    const { userData, token, setToken, roles } = context || {};
+    const { userData, roles } = context || {}; // Removed unused variables token and setToken
     console.log("Context data:", context); // Para verificar el contenido completo
 
     const handleLogout = async () => {
@@ -63,7 +63,7 @@ function Tasks() {
                     <li>Juan Sebastian Velasquez Rodriguez</li>
                     <li>Santiago Alberto Naranjo Abril</li>
                 </ul>
-                {userData.roles.includes("ROLE_ADMIN") && (
+                {roles.includes("ROLE_ADMIN") && (
                     <div>
                         <button className="container1" onClick={openAnalytics}>
                             Ver Analítica de Tareas
