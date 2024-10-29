@@ -5,7 +5,7 @@ import "../styles/Task.css";
 
 function Tasks() {
     const navigate = useNavigate();
-    const [tasks, setTasks] = React.useState([]);
+    const [setTasks] = React.useState([]);
 
     const context = useOutletContext();
     const { userData, roles } = context || {}; // Removed unused variables token and setToken
