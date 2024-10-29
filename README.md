@@ -60,7 +60,40 @@ Con ello hay elementos en el DOM que escuchan cada vez que cambia el back y con 
 
 Adicionalmente se cambiaron algunas cosas de estilos y lo necesario en el front para llamarlo con los elementos de listas.
 
+Con ello queda la funcionalidad completa con html, css y js basico
+
+## Laboratorio 5
+
+### Integración continua
+
+Lo unico que se realizo aqui fue configurar el front para que tambien tenga los nuevos elementos de las tareas, con ello creamos los nuevos inputs y añadimos estos elementos a los metodos de task.js
+
+Adicionalmente se realizo con ayuda de Chart.js los graficos interactivos respecto a las tareas, utilizando todos los parametros que nos pedian alli
+
+![alt text](images/image-6.png)
+
+## Laboratorio 6
+
+### Autenticación
+
+En primer lugar se migro todos los elementos que teniamos a React, se realizo un mockup de como deberia ser la página de login y se crearon los componentes de login, signUp y TaskManager que se encargan de manejar los datos de la autenticación con el back.
+
+![alt text](images/image-7.png)
+
+De esta manera acoplando todo como componentes en el App.js
+
+![alt text](images/image-8.png)
+
+Y asi sucesivamente con todo el resto de la logica
+
+Ademas se hicieron cambios para implementar un modo claro y oscuro, y se cambiaron algunas cosas de estilos.
+
+Todo esto sumado a el routing de la página de login y signUp, se puede ver que se pueden crear sesiones de usuarios y se pueden eliminar sesiones de usuarios. Sumado a que si no existen los elementos de los usuarios que se necesitan, se redirige a la página de login.
+
+## Laboratorio 7
+
 ## 6. Implementación mediante roles
+
 ![alt text](images/image-6.png)
 
 Se creo un componente ProtectedRoute el cual se encarga de revisar las 2 listas, una con los roles que pueden ingresar a esta ruta y otra con los roles del usuario que está navegando (en realidad está guardado en el token), si cumple con los roles, lo redirecciona mediante <Outlet>, herramienta que se encarga de por asi decirlo anidar las direcciones, a la ruta que quería ir antes de la revisión y si no cumple con los roles, lo redirecciona al componente NotAuthorized que le mostrará que no está autorizado para ver esto.
