@@ -66,7 +66,7 @@ function Tasks() {
                     <li>Juan Sebastian Velasquez Rodriguez</li>
                     <li>Santiago Alberto Naranjo Abril</li>
                 </ul>
-                {roles.includes("ROLE_ADMIN") && (
+                {userData.roles.includes("ROLE_ADMIN") && (
                     <div>
                         <button className="container1" onClick={openAnalytics}>
                             Ver Analítica de Tareas
@@ -74,7 +74,7 @@ function Tasks() {
                     </div>
                 )}
             </section>
-            <TaskManager token={userData} setTasks={setTasks} roles={roles} /> {/* Pass roles here */}
+            <TaskManager token={userData} setTasks={setTasks} roles={userData.roles} /> {/* Pass roles here */}
         </div>
     );
 }
