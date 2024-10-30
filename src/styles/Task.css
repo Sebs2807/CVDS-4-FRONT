@@ -26,3 +26,120 @@ body {
     margin-bottom: 20px;
     border-radius: 15px;
 }
+
+/* Table styles */
+.table-container {
+    overflow-x: auto;
+}
+
+#task-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#task-list th,
+#task-list td {
+    border: 1px solid #4DA6FF;
+    padding: 10px;
+    text-align: left;
+}
+
+#task-list th {
+    background-color: #1a3c7d;
+    color: white;
+}
+
+#task-list td {
+    background-color: #05183c;
+    color: white;
+}
+
+#task-list tr:nth-child(even) {
+    background-color: #0a2a5e;
+}
+
+#task-list tr:hover {
+    background-color: #1a3c7d;
+}
+
+#task-list th,
+#task-list td {
+    border-radius: 5px;
+}
+
+/* Button styles */
+.action-button {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.action-button.green {
+    background-color: green;
+    color: white;
+}
+
+.action-button.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.action-button.red {
+    background-color: red;
+    color: white;
+}
+
+/* Modal styles */
+.modal {
+    background-color: #05183c;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-input {
+    background-color: #0a2a5e;
+    color: white;
+    border: 1px solid #4DA6FF;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-button.green {
+    background-color: green;
+    color: white;
+}
+
+.modal-button.red {
+    background-color: red;
+    color: white;
+}
