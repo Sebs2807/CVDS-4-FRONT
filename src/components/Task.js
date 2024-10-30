@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import TaskManager from "./TaskManager";
 import "../styles/Task.css";
 
 function Tasks() {
     const navigate = useNavigate();
-    const [setTasks] = React.useState([]);
-
+    const [tasks, setTasks] = useState([]); // Define setTasks here
+    
     const context = useOutletContext();
-    const { userData, roles } = context || {}; // Removed unused variables token and setToken
+    const { userData } = context || {}; // Removed unused variables token and setToken
     console.log("Context data:", context); // Para verificar el contenido completo
-
-
 
     const handleLogout = async () => {
         try {
+            console.log("tasks", tasks);
             const response = await fetch("https://localhost:8443/auth", {
                 method: "DELETE",
                 headers: {
@@ -53,7 +52,7 @@ function Tasks() {
     return (
         <div className="container">
             <div className="header">
-                <h1 className="title">CRUD de Tareas CVDS Laboratorio 4</h1>
+                <h1 className="title">CRUD de Tareas CVDS</h1>
                 <button className="logout-button" onClick={handleLogout}>
                     Logout
                 </button>
@@ -66,7 +65,7 @@ function Tasks() {
                     <li>Juan Sebastian Velasquez Rodriguez</li>
                     <li>Santiago Alberto Naranjo Abril</li>
                 </ul>
-                {roles.includes("ROLE_ADMIN") && (
+                {userData.roles.includes("ROLE_ADMIN") && (
                     <div>
                         <button className="container1" onClick={openAnalytics}>
                             Ver Analítica de Tareas
@@ -74,7 +73,7 @@ function Tasks() {
                     </div>
                 )}
             </section>
-            <TaskManager token={userData} setTasks={setTasks} roles={roles} /> {/* Pass roles here */}
+            <TaskManager token={userData} setTasks={setTasks} roles={userData.roles} /> {/* Pass setTasks here */}
         </div>
     );
 }
