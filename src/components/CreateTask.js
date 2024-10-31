@@ -15,6 +15,10 @@ function CreateTask({ createTask }) {
     const openModal = () => setModalIsOpen(true);
     const closeModal = () => setModalIsOpen(false);
 
+    /**
+     * Maneja el envio de las casillas para la creación de la tarea y valida los campos para agregar la tarea
+     * @param {Event} e Evento del envío del formulario
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
         if (name && desc && priority > 0 && duration) {
@@ -41,6 +45,7 @@ function CreateTask({ createTask }) {
         <div>
             <button onClick={openModal} className="pi pi-plus">Nueva Tarea</button>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Crear Tarea" className="modal">
+                {/* Genera la ventana emergente para crear una nueva tarea */}
                 <h2>Crear Nueva Tarea</h2>
                 <form onSubmit={handleSubmit} className="modal-form">
                     <div className="modal-inputs">
