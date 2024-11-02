@@ -19,7 +19,7 @@ function Tasks() {
     const handleLogout = async () => {
         try {
             console.log("tasks", tasks);
-            const response = await fetch("https://localhost:433/auth", {
+            const response = await fetch("https://localhost:8443/auth", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Tasks() {
     // Función para abrir la página de analítica de tareas
     const openAnalytics = async () => {
         try {
-            const response = await fetch("https://localhost:433/tasks/all", {
+            const response = await fetch("https://localhost:8443/tasks/all", {
                 headers: {
                     "Content-Type": "application/json",
                 },
