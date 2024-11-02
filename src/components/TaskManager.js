@@ -3,7 +3,7 @@ import CreateTask from "./CreateTask"; // Componente para crear nuevas tareas
 import TaskList from "./TaskList"; // Componente para mostrar la lista de tareas
 
 // URL de la API para las tareas
-const apiUrl = "https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks";
+const apiUrl = "https://localhost:8443/tasks";
 
 function TaskManager({ token, setTasks }) {
     // Estado local para manejar la lista de tareas

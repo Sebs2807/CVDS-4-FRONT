@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = "https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/auth"; // Adjust this if necessary
+const apiUrl = "https://localhost:8443/auth"; // Adjust this if necessary
 
 function Login({ setToken, setUserData, setRoles }) {
 	const [username, setUsername] = useState("");
