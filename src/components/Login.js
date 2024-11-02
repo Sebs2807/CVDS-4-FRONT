@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = "https://localhost:8443/auth"; // Adjust this if necessary
+const apiUrl = "https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/auth"; // Adjust this if necessary
 
 function Login({ setToken, setUserData, setRoles }) {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 
+	/**
+	 * Maneja el evento de autenticación del usuario, realiza una solicitud al API encargado de la autenticación, enviándole el nombre de usuario y la contraseña, si la respuesta es exitosa, guarda el token y los datos del usuario
+	 * @param {Event} e Evento del envío de formulario para autenticación del usuario
+	 */
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
