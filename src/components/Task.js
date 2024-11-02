@@ -14,7 +14,7 @@ function Tasks() {
     const handleLogout = async () => {
         try {
             console.log("tasks", tasks);
-            const response = await fetch("https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/auth", {
+            const response = await fetch("https://localhost:433/auth", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function Tasks() {
 
     const openAnalytics = async () => {
         try {
-            const response = await fetch("https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks/all", {
+            const response = await fetch("https://localhost:433/tasks/all", {
                 headers: {
                     "Content-Type": "application/json",
                 },

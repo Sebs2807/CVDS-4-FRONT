@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import CreateTask from "./CreateTask";
 import TaskList from "./TaskList";
 
-const apiUrl = "https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks";
+const apiUrl = "https://localhost:433/tasks";
 
 function TaskManager({ token, setTasks }) {
     const [tasks, localSetTasks] = useState([]);
