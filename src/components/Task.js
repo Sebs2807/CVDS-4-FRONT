@@ -18,10 +18,8 @@ function Tasks() {
     // Función para manejar el cierre de sesión
     const handleLogout = async () => {
         try {
-            console.log("tasks", tasks); // Registro en la consola para depurar el estado de 'tasks'
-
-            // Llamada a la API para cerrar sesión
-            const response = await fetch("cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/auth", {
+            console.log("tasks", tasks);
+            const response = await fetch("https://localhost:433/auth", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -43,8 +41,7 @@ function Tasks() {
     // Función para abrir la página de analítica de tareas
     const openAnalytics = async () => {
         try {
-            // Llamada a la API para obtener todas las tareas
-            const response = await fetch("https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks/all", {
+            const response = await fetch("https://localhost:433/tasks/all", {
                 headers: {
                     "Content-Type": "application/json",
                 },
