@@ -21,7 +21,7 @@ function Tasks() {
             console.log("tasks", tasks); // Registro en la consola para depurar el estado de 'tasks'
 
             // Llamada a la API para cerrar sesión
-            const response = await fetch("cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/auth", {
+            const response = await fetch("https://localhost:8443/auth", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function Tasks() {
     const openAnalytics = async () => {
         try {
             // Llamada a la API para obtener todas las tareas
-            const response = await fetch("https://cvdslab5-fjecauhqhab6g6ad.eastus-01.azurewebsites.net/tasks/all", {
+            const response = await fetch("https://localhost:8443/tasks/all", {
                 headers: {
                     "Content-Type": "application/json",
                 },
