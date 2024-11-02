@@ -3,16 +3,22 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import TaskManager from "./TaskManager";
 import "../styles/Task.css";
 
+/**
+ * Componente para manejar las tareas del usuario.
+ *
+ * @return {JSX.Element} El componente de tareas.
+ */
 function Tasks() {
     const navigate = useNavigate();
     const [setTasks] = React.useState([]);
 
     const context = useOutletContext();
-    const { userData, roles } = context || {}; // Removed unused variables token and setToken
+    const { userData } = context || {}; // Eliminadas variables no utilizadas token y setToken
     console.log("Context data:", context); // Para verificar el contenido completo
 
-
-
+    /**
+     * Maneja el cierre de sesión del usuario.
+     */
     const handleLogout = async () => {
         try {
             const response = await fetch("https://localhost:8443/auth", {
@@ -33,6 +39,9 @@ function Tasks() {
         }
     };
 
+    /**
+     * Abre la página de analítica de tareas.
+     */
     const openAnalytics = async () => {
         try {
             const response = await fetch("https://localhost:8443/tasks/all", {
@@ -74,7 +83,7 @@ function Tasks() {
                     </div>
                 )}
             </section>
-            <TaskManager token={userData} setTasks={setTasks} roles={userData.roles} /> {/* Pass roles here */}
+            <TaskManager token={userData} setTasks={setTasks} roles={userData.roles} /> {/* Pasar roles aquí */}
         </div>
     );
 }

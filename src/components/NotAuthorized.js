@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Componente para mostrar un mensaje de acceso denegado.
+ *
+ * @return {JSX.Element} Un mensaje indicando que el usuario no tiene los permisos necesarios.
+ */
 function NotAuthorized() {
     return (
         <div>
