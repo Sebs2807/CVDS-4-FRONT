@@ -8,6 +8,10 @@ function Login({ setToken, setUserData, setRoles }) {
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 
+	/**
+	 * Maneja el evento de autenticación del usuario, realiza una solicitud al API encargado de la autenticación, enviándole el nombre de usuario y la contraseña, si la respuesta es exitosa, guarda el token y los datos del usuario
+	 * @param {Event} e Evento del envío de formulario para autenticación del usuario
+	 */
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
