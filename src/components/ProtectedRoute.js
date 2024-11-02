@@ -13,8 +13,10 @@ import { Navigate, Outlet } from "react-router-dom";
  * @return {JSX.Element} El componente protegido o una redirección a la página de no autorizado.
  */
 function ProtectedRoute({ roles, userRoles, userData, token, setToken }) {
+	// Se verifica la coincidencia de alguno de los roles del usuario con los roles permitidos para que puedan acceder a esta ruta
     let hasPermission = false;
 
+<<<<<<< Updated upstream
     // Verifica si el usuario tiene alguno de los roles requeridos
     for (let i = 0; i < roles.length; i++) {
         for (let j = 0; j < token.roles.length; j++) {
@@ -33,6 +35,17 @@ function ProtectedRoute({ roles, userRoles, userData, token, setToken }) {
         // Si el usuario no tiene permiso, redirige a la página de no autorizado
         return <Navigate to="/not-authorized" replace />;
     }
+=======
+	// Si tiene permiso el usuario, usa el componente Outlet para permitir el acceso a la ruta protegida y pasar los parámetros como contexto a la ruta que tenía anidada
+	if (hasPermission) {
+		return (
+			<Outlet context={{ userData, token, setToken }} />
+		);
+	} else {
+		// Si no tiene permiso, renderiza el componente de no autorizado
+		return <Navigate to="/not-authorized" replace />;
+	}
+>>>>>>> Stashed changes
 }
 
 export default ProtectedRoute;
